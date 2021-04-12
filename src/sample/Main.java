@@ -1,0 +1,102 @@
+package sample;
+import entities.categorie_emploi;
+import entities.offre_emploi;
+import entities.postuler_emploi;
+import java.sql.Date;
+import java.util.Calendar;
+import services.categorie_emploi_crud;
+import java.util.List;
+import services.offre_emploi_crud;
+import services.postuler_emploi_crud;
+
+/*
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
+import javax.swing.text.html.ImageView;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
+
+
+    public static void main(String[] args) {
+       // launch(args);
+    }
+}
+*/
+public class Main{
+
+public static void main(String[] args) {
+categorie_emploi c =new categorie_emploi(54, "ahmed", " this is a description ", 22);
+
+categorie_emploi_crud crud = new categorie_emploi_crud();
+    
+//test add
+
+  // crud.add_categorie_emploi(c);
+    
+ //test affichage   
+   
+ /*List<categorie_emploi> lc =crud.displayAllCategorie();
+    System.out.println(lc);*/
+ //crud.updateCategorie_emploi(new categorie_emploi(0, "ahmed", "my name is ahmed", 50), 1);
+ 
+ //crud.deleteCategorie_emploi(1);
+ 
+ 
+ /*categorie_emploi c1= crud.findByIdCategorie_emploi(3);
+    System.out.println(c1); */
+ 
+ //offre_emploi o =new offre_emploi(2, "informatique", 2, "hhhhhhh", 2);
+
+//offre_emploi_crud crudEmploi = new offre_emploi_crud();
+    
+//test add
+
+ // crudEmploi.add_offre_emploi(o);
+    
+ //test affichage   
+   
+/* List<offre_emploi> lc =crudEmploi.displayAllOffre();
+    System.out.println(lc); */
+ //crudEmploi.updateOffre_emploi(new offre_emploi(0, "math"  , 3, "hahah", 3),6);
+ 
+ //crudEmploi.deleteOffre_emploi(6);
+ 
+ 
+ //offre_emploi c1= crudEmploi.findByIdOffre_emploi(4);
+  //  System.out.println(c1); 
+Date sqlDate  = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+  
+  postuler_emploi p =new postuler_emploi(0, sqlDate, 16, 4);
+    
+
+postuler_emploi_crud crudpsotuler = new postuler_emploi_crud();
+//crudpsotuler.add_postuler_emploi(p);
+
+/*List<postuler_emploi> lc =crudpsotuler.displayAllPostulation();
+    System.out.println(lc);*/
+//crudpsotuler.updatePostuler_emploi(new postuler_emploi(0, sqlDate, 17, 5),1);
+
+//postuler_emploi c1= crudpsotuler.findByIdPostuler_emploi(1);
+    //System.out.println(c1);
+    
+    crudpsotuler.deletePostuler_emploi(1);
+
+ 
+ 
+}
+}
