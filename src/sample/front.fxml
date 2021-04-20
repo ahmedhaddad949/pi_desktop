@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePane" prefHeight="559.0" prefWidth="939.0" style="-fx-background-color: linear-gradient(to right top, #ffffff, #d8d0ff, #afa3ff, #8076ff, #3b49ff);" stylesheets="@styles.css/" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.displayalloffre_emploi">
+<AnchorPane fx:id="scenePane" prefHeight="559.0" prefWidth="939.0" style="-fx-background-color: linear-gradient(to right top, #ffffff, #d8d0ff, #afa3ff, #8076ff, #3b49ff);" stylesheets="@styles.css/" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.displayalloffre_emploiFront">
    <children>
       <Pane fx:id="statusPane" layoutY="26.0" prefHeight="139.0" prefWidth="939.0" style="-fx-background-color: #7156DD;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -178,18 +178,7 @@
             <TableColumn fx:id="categorie" prefWidth="139.0" text="categorie" />
         </columns>
       </TableView>
-      <Button fx:id="ajouter" alignment="TOP_LEFT" layoutX="253.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="28.0" prefWidth="118.0" text="ajouter" textFill="WHITE">
-         <font>
-            <Font name="Franklin Gothic Medium" size="14.0" />
-         </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" text="" />
-         </graphic>
-      </Button>
-      <Button fx:id="modiferBtn" alignment="TOP_LEFT" layoutX="448.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#modiferBtn" prefHeight="28.0" prefWidth="118.0" text="modifer" textFill="WHITE">
+      <Button fx:id="postuler" alignment="TOP_LEFT" layoutX="253.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#postuler" prefHeight="28.0" prefWidth="118.0" text="postuler" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="14.0" />
          </font>

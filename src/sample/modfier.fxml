@@ -4,14 +4,16 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePane" prefHeight="559.0" prefWidth="939.0" style="-fx-background-color: linear-gradient(to right top, #ffffff, #d8d0ff, #afa3ff, #8076ff, #3b49ff);" stylesheets="@styles.css/" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.displayalloffre_emploi">
+<AnchorPane fx:id="scenePane" prefHeight="559.0" prefWidth="939.0" style="-fx-background-color: linear-gradient(to right top, #ffffff, #d8d0ff, #afa3ff, #8076ff, #3b49ff);" stylesheets="@styles.css/" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.modifierOffreEmploi">
    <children>
       <Pane fx:id="statusPane" layoutY="26.0" prefHeight="139.0" prefWidth="939.0" style="-fx-background-color: #7156DD;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -170,15 +172,7 @@
             <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" />
          </graphic>
       </Button>
-      <TableView fx:id="table" layoutX="190.0" layoutY="230.0" prefHeight="139.0" prefWidth="634.0">
-        <columns>
-          <TableColumn fx:id="titre" prefWidth="75.0" text="titre" />
-          <TableColumn fx:id="nb_offre" prefWidth="130.0" text="nombre d'offre" />
-            <TableColumn fx:id="description" prefWidth="289.0" text="description" />
-            <TableColumn fx:id="categorie" prefWidth="139.0" text="categorie" />
-        </columns>
-      </TableView>
-      <Button fx:id="ajouter" alignment="TOP_LEFT" layoutX="253.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="28.0" prefWidth="118.0" text="ajouter" textFill="WHITE">
+      <Button fx:id="ajouterBtn" alignment="TOP_LEFT" layoutX="253.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#ajouterBtn" prefHeight="28.0" prefWidth="118.0" text="ajouter" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="14.0" />
          </font>
@@ -189,7 +183,26 @@
             <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" text="" />
          </graphic>
       </Button>
-      <Button fx:id="modiferBtn" alignment="TOP_LEFT" layoutX="448.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#modiferBtn" prefHeight="28.0" prefWidth="118.0" text="modifer" textFill="WHITE">
+      <TextField fx:id="titre" layoutX="345.0" layoutY="194.0" />
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <TextField fx:id="categorie" layoutX="345.0" layoutY="264.0" />
+      <TextField fx:id="description" layoutX="345.0" layoutY="320.0" />
+      <TextField fx:id="nombre_offre" layoutX="345.0" layoutY="380.0" />
+      <Label layoutX="226.0" layoutY="199.0" text="Titre" />
+      <Label layoutX="226.0" layoutY="254.0" text="Catégorie" />
+      <Label layoutX="226.0" layoutY="325.0" text="Description" />
+      <Label layoutX="226.0" layoutY="385.0" text="Nombre d'offre" />
+      <Button fx:id="retourBtn" alignment="TOP_LEFT" layoutX="783.0" layoutY="490.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#retourBtn" prefHeight="28.0" prefWidth="118.0" text="retour" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="14.0" />
          </font>

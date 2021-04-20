@@ -1,46 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="559.0" prefWidth="939.0" stylesheets="@styles.css/" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="scenePane" prefHeight="559.0" prefWidth="939.0" style="-fx-background-color: linear-gradient(to right top, #ffffff, #d8d0ff, #afa3ff, #8076ff, #3b49ff);" stylesheets="@styles.css/" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.displayalloffre_emploi">
    <children>
-      <Pane fx:id="statusPane" layoutY="84.0" prefHeight="139.0" prefWidth="939.0" style="-fx-background-color: #7156DD;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane fx:id="statusPane" layoutY="26.0" prefHeight="139.0" prefWidth="939.0" style="-fx-background-color: #7156DD;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label fx:id="rootLbl" layoutX="283.0" layoutY="22.0" prefHeight="28.0" prefWidth="143.0" textFill="WHITE" />
-            <Label fx:id="pageLbl" layoutX="283.0" layoutY="50.0" textFill="WHITE">
+            <Label fx:id="rootLbl" layoutX="156.0" layoutY="28.0" prefHeight="28.0" prefWidth="143.0" textFill="WHITE" />
+            <Label fx:id="pageLbl" ellipsisString="" layoutX="156.0" layoutY="56.0" textFill="WHITE">
                <font>
-                  <Font size="36.0" />
+                  <Font name="System Bold" size="36.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <VBox prefHeight="507.0" prefWidth="223.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="567.0" prefWidth="151.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane prefHeight="160.0" prefWidth="179.0">
+            <Pane prefHeight="131.0" prefWidth="127.0">
                <children>
-                  <Label layoutX="3.0" layoutY="4.0" lineSpacing="100.0" prefHeight="153.0" prefWidth="243.0" text="INFIJOB" textFill="WHITE" underline="true">
+                  <Button fx:id="homeBtn" contentDisplay="TOP" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="131.0" prefWidth="150.0" text="INFIJOB" textFill="WHITE">
                      <font>
-                        <Font name="SansSerif Bold" size="36.0" />
+                        <Font name="Microsoft PhagsPa Bold" size="27.0" />
                      </font>
                      <graphic>
-                        <ImageView fx:id="logo" fitHeight="63.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../NEW%20DESKTOP/3A/PMFINI/Multimedia/Logo/Untitled-1.png" />
-                           </image>
-                        </ImageView>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="60" />
                      </graphic>
-                  </Label>
+                  </Button>
                </children>
             </Pane>
-            <Button fx:id="acceuilBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="ACCUEIL " textFill="WHITE" VBox.vgrow="NEVER">
+            <Button fx:id="acceuilBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" stylesheets="@styles.css" text="ACCUEIL " textFill="WHITE" VBox.vgrow="NEVER">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
@@ -50,8 +47,11 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <graphic>
+                  <FontAwesomeIconView fx:id="homeIco" fill="WHITE" glyphName="HOME" />
+               </graphic>
             </Button>
-            <Button fx:id="freelaneBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="FREELANCE" textFill="WHITE">
+            <Button fx:id="freelaneBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="FREELANCE" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
@@ -61,8 +61,11 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="GLOBE" />
+               </graphic>
             </Button>
-            <Button fx:id="emploiBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="EMPLOI" textFill="WHITE">
+            <Button fx:id="emploiBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="EMPLOI" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
@@ -72,8 +75,11 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" />
+               </graphic>
             </Button>
-            <Button fx:id="questionnaireBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="QUESTIONNAIRE" textFill="WHITE">
+            <Button fx:id="questionnaireBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="QUESTIONNAIRE" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
@@ -83,8 +89,11 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="QUESTION" />
+               </graphic>
             </Button>
-            <Button fx:id="formationBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="FORMATION" textFill="WHITE">
+            <Button fx:id="formationBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="FORMATION" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
@@ -94,8 +103,11 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="BOOK" />
+               </graphic>
             </Button>
-            <Button fx:id="reclamationBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="RECLAMATION" textFill="WHITE">
+            <Button fx:id="reclamationBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="RECLAMATION" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
@@ -105,8 +117,11 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE" />
+               </graphic>
             </Button>
-            <Button fx:id="utilisateursBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="UTILISATEURS" textFill="WHITE">
+            <Button fx:id="utilisateursBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="UTILISATEURS" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
@@ -116,8 +131,11 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="GROUP" />
+               </graphic>
             </Button>
-            <Button fx:id="profileBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="PROFILE" textFill="WHITE">
+            <Button fx:id="profileBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="PROFILE" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
@@ -127,8 +145,11 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" />
+               </graphic>
             </Button>
-            <Button fx:id="parametresBtn" alignment="TOP_CENTER" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="PARAMETRES" textFill="WHITE">
+            <Button fx:id="parametresBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="PARAMETRES" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
@@ -138,8 +159,46 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="COG" />
+               </graphic>
             </Button>
          </children>
       </VBox>
+      <Button fx:id="closeBtn" layoutX="887.0" layoutY="1.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="2.0" style="-fx-background-color: NONE;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" />
+         </graphic>
+      </Button>
+      <TableView fx:id="table" layoutX="190.0" layoutY="230.0" prefHeight="139.0" prefWidth="634.0">
+        <columns>
+          <TableColumn fx:id="titre" prefWidth="75.0" text="titre" />
+          <TableColumn fx:id="nb_offre" prefWidth="130.0" text="nombre d'offre" />
+            <TableColumn fx:id="description" prefWidth="289.0" text="description" />
+            <TableColumn fx:id="categorie" prefWidth="139.0" text="categorie" />
+        </columns>
+      </TableView>
+      <Button fx:id="ajouter" alignment="TOP_LEFT" layoutX="253.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="28.0" prefWidth="118.0" text="ajouter" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" text="" />
+         </graphic>
+      </Button>
+      <Button fx:id="modiferBtn" alignment="TOP_LEFT" layoutX="448.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#modiferBtn" prefHeight="28.0" prefWidth="118.0" text="modifer" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" text="" />
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

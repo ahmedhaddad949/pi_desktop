@@ -17,6 +17,8 @@ import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.control.TableColumn;
+import javafx.scene.layout.AnchorPane;
 
 
 public class Controller implements Initializable {
@@ -25,8 +27,6 @@ public class Controller implements Initializable {
     @FXML
     private Label rootLbl;
 
-    @FXML
-    private ImageView logo;
 
     @FXML
     private Label pageLbl;
@@ -60,6 +60,22 @@ public class Controller implements Initializable {
 
     @FXML
     private Pane statusPane;
+    @FXML
+    private AnchorPane scenePane;
+    @FXML
+    private Button homeBtn;
+    @FXML
+    private Button closeBtn;
+    @FXML
+    private TableColumn<?, ?> titre;
+    @FXML
+    private TableColumn<?, ?> nb_offre;
+    @FXML
+    private TableColumn<?, ?> description;
+    @FXML
+    private TableColumn<?, ?> categorie;
+    @FXML
+    private Button emploiBtn1;
 
 
 
@@ -121,6 +137,10 @@ public class Controller implements Initializable {
             statusPane.setBackground(new Background(new BackgroundFill(Color.rgb(63,43,99) , CornerRadii.EMPTY, Insets.EMPTY)) );     }
 
 
+    }
+
+    @FXML
+    private void logout(ActionEvent event) {
     }
 
 

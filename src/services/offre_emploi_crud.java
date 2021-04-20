@@ -5,6 +5,7 @@
  */
 package services;
 
+import com.sun.javafx.collections.ElementObservableListDecorator;
 import java.sql.Connection;
 import utils.MyConnection;
 import java.sql.Statement;
@@ -15,6 +16,8 @@ import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -29,7 +32,9 @@ public class offre_emploi_crud {
         cn2 = MyConnection.getInstance().getCnx();
     }
     
-        public List<offre_emploi> displayAllOffre() {
+        public ObservableList<offre_emploi> displayAllOffre() {
+         ObservableList<offre_emploi> Listeopp=  FXCollections.observableArrayList();;
+
         ArrayList<offre_emploi> list = new ArrayList<>();
 
         try {
@@ -37,6 +42,7 @@ public class offre_emploi_crud {
             String requete3 = "SELECT * FROM offre_emploi ";
             PreparedStatement pst2 = cn2.prepareStatement(requete3);
             ResultSet rs = pst2.executeQuery();
+            Listeopp = FXCollections.observableArrayList();
             while (rs.next()) {
                 offre_emploi o = new offre_emploi();
                 o.setId(rs.getInt("id"));
@@ -44,14 +50,15 @@ public class offre_emploi_crud {
                 o.setNbr_offres(rs.getInt("nbr_offres"));
                 o.setDescription_cat_em(rs.getString("description_cat_em"));
                 o.setCategorieEmploi_id(rs.getInt("categorieEmploi_id"));
-                list.add(o);
+                //list.add(o);
+                Listeopp.add(o);
 
             }
 
         } catch (SQLException ex) {
             System.out.println("erreur displayAllOffre_emploi" +ex.getMessage());
         }
-        return list;
+        return Listeopp;
 
     }
     
