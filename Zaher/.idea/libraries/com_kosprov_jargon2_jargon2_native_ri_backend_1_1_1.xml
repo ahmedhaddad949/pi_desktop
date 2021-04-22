@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.kosprov.jargon2:jargon2-native-ri-backend:1.1.1" type="repository">
+    <properties maven-id="com.kosprov.jargon2:jargon2-native-ri-backend:1.1.1" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jargon2-native-ri-backend-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jnaerator-runtime-0.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ochafik-util-0.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jna-4.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jargon2-native-ri-binaries-generic-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

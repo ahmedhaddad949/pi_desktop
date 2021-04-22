@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="scenePane" prefHeight="559.0" prefWidth="939.0" style="-fx-background-color: linear-gradient(to right top, #ffffff, #d8d0ff, #afa3ff, #8076ff, #3b49ff);" stylesheets="@styles.css/" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane fx:id="statusPane" layoutY="40.0" prefHeight="67.0" prefWidth="947.0" style="-fx-background-color: #7156DD;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label fx:id="pageLbl" ellipsisString="" layoutX="156.0" layoutY="30.0" prefHeight="30.0" prefWidth="691.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="rootLbl" layoutX="156.0" layoutY="14.0" prefHeight="4.0" prefWidth="143.0" textFill="WHITE" />
+         </children>
+      </Pane>
+      <VBox prefHeight="567.0" prefWidth="151.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="131.0" prefWidth="127.0">
+               <children>
+                  <Button fx:id="homeBtn" contentDisplay="TOP" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="131.0" prefWidth="150.0" text="INFIJOB" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft PhagsPa Bold" size="27.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="60" />
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Button fx:id="acceuilBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" stylesheets="@styles.css" text="ACCUEIL " textFill="WHITE" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <graphic>
+                  <FontAwesomeIconView fx:id="homeIco" fill="WHITE" glyphName="HOME" />
+               </graphic>
+            </Button>
+            <Button fx:id="freelaneBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="FREELANCE" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="GLOBE" />
+               </graphic>
+            </Button>
+            <Button fx:id="emploiBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="EMPLOI" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" />
+               </graphic>
+            </Button>
+            <Button fx:id="questionnaireBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="QUESTIONNAIRE" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="QUESTION" />
+               </graphic>
+            </Button>
+            <Button fx:id="formationBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="FORMATION" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="BOOK" />
+               </graphic>
+            </Button>
+            <Button fx:id="reclamationBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="RECLAMATION" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE" />
+               </graphic>
+            </Button>
+            <Button fx:id="utilisateursBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="UTILISATEURS" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="GROUP" />
+               </graphic>
+            </Button>
+            <Button fx:id="profileBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="PROFILE" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" />
+               </graphic>
+            </Button>
+            <Button fx:id="parametresBtn" alignment="TOP_LEFT" lineSpacing="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="30.0" prefWidth="269.0" text="PARAMETRES" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="COG" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <Button fx:id="closeBtn" layoutX="887.0" layoutY="1.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="2.0" style="-fx-background-color: NONE;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" />
+         </graphic>
+      </Button>
+      <Label fx:id="userName" depthTest="ENABLE" layoutX="864.0" layoutY="10.0" textFill="WHITE" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" size="30" />
+         </graphic>
+         <font>
+            <Font size="13.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <AnchorPane fx:id="usersPane" layoutX="150.0" layoutY="180.0" prefHeight="374.0" prefWidth="787.0" visible="false">
+         <children>
+            <TableView fx:id="tableUsers" layoutX="181.0" layoutY="26.0" prefHeight="307.0" prefWidth="526.0">
+              <columns>
+                  <TableColumn fx:id="idUser" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nameUsers" prefWidth="75.0" text="NAME" />
+                  <TableColumn fx:id="prenomUsers" prefWidth="75.0" text="PRENOM" />
+                  <TableColumn fx:id="emailUsers" prefWidth="75.0" text="EMAIL" />
+                <TableColumn fx:id="roleUsers" prefWidth="75.0" text="ROLE" />
+                  <TableColumn fx:id="editUsers" prefWidth="75.0" text="EDIT" />
+                  <TableColumn fx:id="deleteUsers" prefWidth="75.0" text="DELETE" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="freelancePane" layoutX="151.0" layoutY="180.0" prefHeight="384.0" prefWidth="796.0" visible="false">
+         <children>
+            <TableView fx:id="tableFreelanceCat" layoutX="256.0" prefHeight="384.0" prefWidth="526.0">
+               <columns>
+                  <TableColumn fx:id="idfreelanceCat" prefWidth="54.0" text="ID" />
+                  <TableColumn fx:id="namefreelanceCat" prefWidth="127.0" text="CATEGORY NAME" />
+                  <TableColumn fx:id="descfreelancecat" prefWidth="111.0" text="DESCRIPTION" />
+                  <TableColumn fx:id="nbroffrefreelanceCat" text="NBR OFFRES" />
+                  <TableColumn fx:id="editfreelanceCat" prefWidth="67.0" text="EDIT" />
+                  <TableColumn fx:id="deletefreelanceCat" prefWidth="81.0" text="DELETE" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <PieChart fx:id="rolesPieChart" layoutX="151.0" layoutY="107.0" prefHeight="242.0" prefWidth="416.0" />
+   </children>
+</AnchorPane>

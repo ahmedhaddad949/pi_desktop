@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="480.0" styleClass="blue-panel" stylesheets="@styleslogin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.signInController">
+   <children>
+      <Label text="Login" textFill="#2196f3">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" styleClass="tf_box" stylesheets="@styleslogin.css">
+         <children>
+            <TextField fx:id="usrNamesignIn" promptText="Username" styleClass="tf_box" stylesheets="@styleslogin.css" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.3em" />
+         </children>
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="15.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" styleClass="tf_box" stylesheets="@styleslogin.css">
+         <children>
+            <PasswordField fx:id="pwdsignIn" promptText="Password" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" size="1.3em" />
+         </children>
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <Button fx:id="signInOk" mnemonicParsing="false" onAction="#loginUser" prefHeight="38.0" prefWidth="491.0" styleClass="blue-btn" text="Sign In" textFill="WHITE" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="50.0" />
+         </VBox.margin>
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="forgotPassword" mnemonicParsing="false" onAction="#forgotPwd" prefHeight="38.0" prefWidth="491.0" styleClass="blue-btn" text="Forgot Password" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="40.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
