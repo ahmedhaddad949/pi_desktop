@@ -6,6 +6,7 @@
 package gui;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import entities.categorie_emploi;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,8 +20,13 @@ import javafx.scene.layout.Pane;
 import services.offre_emploi_crud;
 import entities.offre_emploi;
 import java.io.IOException;
+import java.util.stream.Collectors;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.ComboBox;
+import javafx.util.StringConverter;
+import services.categorie_emploi_crud;
 
 /**
  * FXML Controller class
@@ -66,11 +72,13 @@ public class ajouterOffreEmploi implements Initializable {
     @FXML
     private TextField titre;
     @FXML
-    private TextField categorie;
+    private ComboBox<categorie_emploi> categorie;
     @FXML
     private TextField description;
     @FXML
     private TextField nombre_offre;
+    
+    int categorieint ;
 
     offre_emploi_crud of =new offre_emploi_crud();
     @FXML
@@ -80,6 +88,34 @@ public class ajouterOffreEmploi implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+                categorie_emploi_crud cem=new  categorie_emploi_crud();
+         ObservableList<categorie_emploi> items =cem.displayAllCategorie();
+         
+         System.out.println("hiiiiiiiii"+items);
+                 categorie.setItems(items);
+
+         
+        StringConverter<categorie_emploi> converter = new StringConverter<categorie_emploi>() {
+            @Override
+            public String toString(categorie_emploi ce) {
+                return ce.getNom_emploi();
+            }
+
+            @Override
+            public categorie_emploi fromString(String id) {
+                return items.stream()
+                        .filter(item -> item.getNom_emploi().equals(id))
+                        .collect(Collectors.toList()).get(0);
+            }
+        };
+        categorie.setConverter(converter);
+        // Print the name of the Bank that is selected
+        categorie.getSelectionModel().selectedItemProperty().addListener((o, ol, nw) -> {
+            System.out.println(categorie.getValue());
+            categorieint =categorie.getValue().getId();
+            
+        });
+
         // TODO
     }    
 
@@ -93,16 +129,18 @@ public class ajouterOffreEmploi implements Initializable {
 
     @FXML
     private void ajouterBtn(ActionEvent event) {
+        
+
+
         String titret=titre.getText();
-        String  categoriet=categorie.getText();
         String descriptiont = description.getText();
         String nombre_offret =nombre_offre.getText();
-        System.out.println(titret+categoriet+descriptiont+nombre_offret);
-        int intCategorie =Integer.parseInt(categoriet);
+        System.out.println(titret+descriptiont+nombre_offret);
+//        int intCategorie =Integer.parseInt(categoriet);
                 int intNombreOffre=Integer.parseInt(nombre_offret);
 
         
-        offre_emploi offre =new offre_emploi(0, titret, intNombreOffre  , descriptiont, intCategorie);
+        offre_emploi offre =new offre_emploi(0, titret, intNombreOffre  , descriptiont, categorieint);
         of.add_offre_emploi(offre);
         
         

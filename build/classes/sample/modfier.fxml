@@ -172,7 +172,7 @@
             <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" />
          </graphic>
       </Button>
-      <Button fx:id="ajouterBtn" alignment="TOP_LEFT" layoutX="253.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#ajouterBtn" prefHeight="28.0" prefWidth="118.0" text="ajouter" textFill="WHITE">
+      <Button fx:id="ajouterBtn" alignment="TOP_LEFT" layoutX="253.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#ajouterBtn" prefHeight="28.0" prefWidth="118.0" text="modifier" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="14.0" />
          </font>

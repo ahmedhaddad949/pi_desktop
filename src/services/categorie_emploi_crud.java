@@ -10,11 +10,14 @@ import utils.MyConnection;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import entities.categorie_emploi;
+import entities.offre_emploi;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 /**
@@ -30,7 +33,9 @@ public class categorie_emploi_crud {
         cn2 = MyConnection.getInstance().getCnx();
     }
     
-        public List<categorie_emploi> displayAllCategorie() {
+        public ObservableList<categorie_emploi> displayAllCategorie() {
+                     ObservableList<categorie_emploi> Listeopp=  FXCollections.observableArrayList();;
+
         ArrayList<categorie_emploi> list = new ArrayList<>();
 
         try {
@@ -44,14 +49,14 @@ public class categorie_emploi_crud {
                 c.setNom_emploi(rs.getString("nom_emploi"));
                 c.setDescription_emploi(rs.getString("description_emploi"));
                 c.setNbr_offres(rs.getInt("nbr_offres"));
-                list.add(c);
+                Listeopp.add(c);
 
             }
 
         } catch (SQLException ex) {
             System.out.println("erreur displayAllCampement" +ex.getMessage());
         }
-        return list;
+        return Listeopp;
 
     }
     

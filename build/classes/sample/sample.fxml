@@ -173,9 +173,9 @@
       <TableView fx:id="table" layoutX="190.0" layoutY="230.0" prefHeight="139.0" prefWidth="634.0">
         <columns>
           <TableColumn fx:id="titre" prefWidth="75.0" text="titre" />
-          <TableColumn fx:id="nb_offre" prefWidth="130.0" text="nombre d'offre" />
-            <TableColumn fx:id="description" prefWidth="289.0" text="description" />
-            <TableColumn fx:id="categorie" prefWidth="139.0" text="categorie" />
+          <TableColumn fx:id="nb_offre" prefWidth="195.0" text="nombre d'offre" />
+            <TableColumn fx:id="description" prefWidth="159.0" text="description" />
+            <TableColumn fx:id="categorieNamr" prefWidth="204.0" text="categorie" />
         </columns>
       </TableView>
       <Button fx:id="ajouter" alignment="TOP_LEFT" layoutX="253.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="28.0" prefWidth="118.0" text="ajouter" textFill="WHITE">
@@ -190,6 +190,17 @@
          </graphic>
       </Button>
       <Button fx:id="modiferBtn" alignment="TOP_LEFT" layoutX="448.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#modiferBtn" prefHeight="28.0" prefWidth="118.0" text="modifer" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" text="" />
+         </graphic>
+      </Button>
+      <Button fx:id="supprimerBtn" alignment="TOP_LEFT" layoutX="660.0" layoutY="462.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#supprimerBtn" prefHeight="28.0" prefWidth="118.0" text="supprimer" textFill="WHITE">
          <font>
             <Font name="Franklin Gothic Medium" size="14.0" />
          </font>

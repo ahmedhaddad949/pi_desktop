@@ -8,9 +8,12 @@ package gui;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import entities.categorie_emploi;
 import entities.offre_emploi;
+import entities.postuler_emploi;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +21,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -31,6 +35,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import services.categorie_emploi_crud;
 import services.offre_emploi_crud;
+import services.postuler_emploi_crud;
 
 /**
  * FXML Controller class
@@ -80,8 +85,7 @@ public class displayalloffre_emploi implements Initializable {
     private TableColumn<offre_emploi, Integer> nb_offre;
     @FXML
     private TableColumn<offre_emploi, String> description;
-    @FXML
-    private TableColumn<offre_emploi, Integer> categorie;
+  
     
     
         
@@ -94,6 +98,10 @@ public class displayalloffre_emploi implements Initializable {
     private Button ajouter;
     @FXML
     private Button modiferBtn;
+    @FXML
+    private Button supprimerBtn;
+    @FXML
+    private TableColumn<offre_emploi, String> categorieNamr;
 
 
     /**
@@ -101,27 +109,31 @@ public class displayalloffre_emploi implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        
+        reload();
+        
+    }    
+
+    private void  reload(){
                 System.out.println(data);
                 data=oe.displayAllOffre();
                 
                 titre.setCellValueFactory(new PropertyValueFactory<>("titre_offre_emploi"));
                 nb_offre.setCellValueFactory(new PropertyValueFactory<>("nbr_offres"));
                 description.setCellValueFactory(new PropertyValueFactory<>("description_cat_em"));
-                categorie.setCellValueFactory(new PropertyValueFactory<>("CategorieEmploi_id"));
-                
+                categorie_emploi_crud emploicrud = new categorie_emploi_crud();
+                categorieNamr.setCellValueFactory(cellData -> new SimpleStringProperty(emploicrud.findByIdCategorie_emploi(cellData.getValue().getCategorieEmploi_id()).getNom_emploi()));
+           
                 titre.setSortType(TableColumn.SortType.ASCENDING);
                 nb_offre.setSortType(TableColumn.SortType.ASCENDING);
                 description.setSortType(TableColumn.SortType.ASCENDING);
-                categorie.setSortType(TableColumn.SortType.ASCENDING);
                      
                  System.out.println(data);
                 
                  table.setItems(data);
         
-        
-        
-    }    
-
+    }
     @FXML
     private void handleClicks(ActionEvent event) {
         if(event.getSource() == acceuilBtn) {
@@ -185,19 +197,7 @@ public class displayalloffre_emploi implements Initializable {
     private void logout(ActionEvent event) {
     }
 
-    private void sayhello(ActionEvent event) {
-        try{
-            
-  FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/sample_1.fxml"));
-            Parent root = loader.load();
-              
-
-            sample_1 dpc = loader.getController();
-
-            homeBtn.getScene().setRoot(root );       } catch (IOException ex) {
-                
-                    System.out.println(ex.getMessage());;
-        } }
+   
 
     @FXML
     private void ajouter(ActionEvent event) {
@@ -222,6 +222,12 @@ public class displayalloffre_emploi implements Initializable {
         
           ObservableList<offre_emploi> row ;
             row = table.getSelectionModel().getSelectedItems();  
+              if (row.get(0)==null) {
+                        alert("erreur", "Vous devez selectionnez une offre");
+                       
+
+            return;
+            }
             System.out.println(row.get(0).getId());
                try{
             
@@ -243,5 +249,51 @@ public class displayalloffre_emploi implements Initializable {
           
 
     }
+
+    @FXML
+    private void supprimerBtn(ActionEvent event) {
+        
+         ObservableList<offre_emploi> row ;
+            row = table.getSelectionModel().getSelectedItems();  
+            postuler_emploi_crud pe =new postuler_emploi_crud();
+            
+            List< postuler_emploi> allpostuler= pe.displayAllPostulation();
+
+            if (row.get(0)==null) {
+                        alert("erreur", "Vous devez selectionnez une offre");
+                       
+
+            return;
+            }
+                        
+            for(int i =0 ; i<allpostuler.size();i++)
+            {
+               if( allpostuler.get(i).getId()==row.get(0).getId()){
+                   alert("erreur", "il y a quelqu'un qui a déja postuler sur cette offre");
+                   return;
+                   
+               }
+                
+            }
+            
+            
+            offre_emploi_crud offc=new offre_emploi_crud();
+            offc.deleteOffre_emploi(row.get(0).getId());
+            this.reload();
+            alert("suppression","suppression effectuer avec succes");
+            
+        }
+
+    void alert (String title , String content){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle(title);
+            alert.setContentText(content);
+            alert.showAndWait();
+    }
+           
+          
+        
+        
+    }
     
-}
+

@@ -7,11 +7,15 @@ package gui;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import entities.offre_emploi;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -107,10 +111,33 @@ public class modifierOffreEmploi implements Initializable {
         offre_emploi offre =new offre_emploi(0, titret, intNombreOffre  , descriptiont, intCategorie);
         
         offrecrud.updateOffre_emploi(offre, idOffre);
+        alert( "modification" , "modification avec succes");
+       
+        
+        
     }
+      void alert (String title , String content){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle(title);
+            alert.setContentText(content);
+            alert.showAndWait();
+    }
+           
 
     @FXML
     private void retourBtn(ActionEvent event) {
+        try{
+            
+  FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/sample.fxml"));
+            Parent root = loader.load();
+              
+
+            displayalloffre_emploi dpc = loader.getController();
+
+            homeBtn.getScene().setRoot(root );       } catch (IOException ex) {
+                
+                    System.out.println(ex.getMessage());;
+        } 
     }
     
 }

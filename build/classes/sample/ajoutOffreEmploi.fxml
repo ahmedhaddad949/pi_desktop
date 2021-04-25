@@ -3,6 +3,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -195,7 +196,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <TextField fx:id="categorie" layoutX="345.0" layoutY="264.0" />
       <TextField fx:id="description" layoutX="345.0" layoutY="320.0" />
       <TextField fx:id="nombre_offre" layoutX="345.0" layoutY="380.0" />
       <Label layoutX="226.0" layoutY="199.0" text="Titre" />
@@ -213,5 +213,6 @@
             <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" text="" />
          </graphic>
       </Button>
+      <ComboBox fx:id="categorie" layoutX="364.0" layoutY="249.0" prefHeight="31.0" prefWidth="163.0" />
    </children>
 </AnchorPane>
