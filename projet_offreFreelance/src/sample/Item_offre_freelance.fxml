@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="itemC" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="325.0" spacing="80.0" style="-fx-background-color: #131022; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Item_Offre_freelanceController">
+    <children>
+      <Pane prefHeight="461.0" prefWidth="325.0" style="-fx-background-color: fff; -fx-background-radius: 15;">
+         <children>
+              <Button fx:id="btn_participer" layoutX="81.0" layoutY="387.0" mnemonicParsing="false" onAction="#participer" prefHeight="25.0" prefWidth="145.0" styleClass="button4" stylesheets="@../css/style.css" text="Participer" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat ExtraBold" size="14.0" />
+               </font></Button>
+            <Label fx:id="Titre" layoutX="136.0" layoutY="83.0" text="Titre">
+               <font>
+                  <Font name="Montserrat ExtraBold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="153.0" text="Description" textFill="#171313">
+               <font>
+                  <Font name="Montserrat Medium" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="description" layoutX="134.0" layoutY="153.0" prefHeight="17.0" prefWidth="84.0" text="Quantite" textFill="#171313">
+               <font>
+                  <Font name="Montserrat Medium" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageview" fitHeight="70.0" fitWidth="78.0" layoutX="126.0" layoutY="261.0" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/upload.gif" />
+               </image>
+            </ImageView>
+            <Button layoutX="82.0" layoutY="173.0" mnemonicParsing="false" onAction="#Map" prefHeight="25.0" prefWidth="145.0" styleClass="button4" stylesheets="@../css/style.css" text="Map" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat ExtraBold" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="38.0" layoutY="265.0" text="CV" textFill="#171313">
+               <font>
+                  <Font name="Montserrat Medium" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_motivation" layoutX="91.0" layoutY="339.0" />
+            <Label layoutX="15.0" layoutY="342.0" text="Moitivtion" textFill="#171313">
+               <font>
+                  <Font name="Montserrat Medium" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+    </children>
+    <effect>
+        <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+    </effect>
+</HBox>
